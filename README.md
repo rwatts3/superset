@@ -17,6 +17,12 @@ docker-compose up -d redis mysql
 docker-compose up -d superset
 # Wait for Superset to come online...
 docker-compose exec superset demo
+
+# Additional Steps
+docker exec -it -u superset superset_superset_1 sh
+$sh superset db upgrade
+#possibly run this command.
+$sh superset init
 ```
 
 You will be prompted to set up an admin user.
